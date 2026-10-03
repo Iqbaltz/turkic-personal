@@ -21,22 +21,22 @@ export function CopyEmail({ email }: { email: string }) {
   }
 
   return (
-    <div className="flex flex-col justify-between gap-6 rounded-[1.75rem] border-2 border-dashed border-cobalt-300 bg-sand-50 p-6">
+    <div className="flex flex-col justify-between gap-6 rounded-xl border border-khaki-400/70 bg-sand-50 p-5">
       <span className="flex items-center justify-between">
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-cobalt-700">Email</span>
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-khaki-600">Email</span>
         <a
           href={`mailto:${email}`}
-          className="text-xs font-semibold text-ink-soft underline decoration-khaki-400 underline-offset-4 hover:text-cobalt-700"
+          className="text-xs font-semibold text-ink-soft underline decoration-khaki-400 underline-offset-4 hover:text-turq-700"
         >
           Open mail app
         </a>
       </span>
       <span>
-        <span className="block break-all font-display text-[1.45rem] font-semibold leading-tight text-ink">{email}</span>
+        <span className="block break-all font-display text-[1.4rem] font-semibold leading-tight text-ink">{email}</span>
         <button
           type="button"
           onClick={copy}
-          className="mt-3 inline-flex items-center gap-2 rounded-full bg-cobalt-100 px-4 py-2 text-sm font-semibold text-cobalt-700 transition-colors hover:bg-cobalt-200"
+          className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-turq-700 hover:text-ink"
         >
           <svg viewBox="0 0 16 16" className="h-4 w-4" aria-hidden>
             {copied ? (

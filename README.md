@@ -1,9 +1,10 @@
 # Muhammad Iqbal · Portfolio
 
-A personal portfolio built as a walk through an Ottoman caravanserai: scroll through the palace gate into a pastel
-courtyard, then visit the rooms (About, Workbench, Journey, Bazaar, Library, Tea house).
+A quiet, minimal personal portfolio with an Ottoman accent: a pointed-arch window, line-drawn eight-pointed stars
+and Turkish section names (Hakkımda, Tezgâh, Yolculuk, Çarşı, Kitaplık, Çayhane). Almost nothing moves; only links
+and buttons change colour on hover.
 
-Next.js 16 (App Router) · Tailwind CSS v4 · Motion · Lenis. All artwork is hand-drawn SVG, no image files.
+Next.js 16 (App Router) · Tailwind CSS v4. All ornament is hand-drawn SVG, no image files.
 
 ## Run it
 
@@ -20,11 +21,10 @@ books and contact details. The CV served for download is [`public/cv/Muhammad-Iq
 
 | Piece | File |
 | --- | --- |
-| Gate and courtyard artwork | `src/components/hero/portal-scene.tsx` |
-| Scroll walk-through | `src/components/hero/portal-hero.tsx` |
 | Sections | `src/components/sections/*` |
+| Arch, stars and dividers | `src/components/ornaments.tsx` |
 | Palette | `src/app/globals.css` (`@theme`) and `src/lib/palette.ts` |
-| Tile patterns | `src/lib/patterns.ts` |
+| Star geometry and pattern | `src/lib/patterns.ts` |
 
 ## Deploy
 

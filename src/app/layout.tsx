@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { Nav } from "@/components/nav";
-import { Providers } from "@/components/providers";
-import { noise } from "@/lib/patterns";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -33,16 +31,16 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F5EDE0",
+  themeColor: "#FBF7EF",
   colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable} h-full`}>
-      <body className="min-h-full bg-sand-100 font-sans text-ink antialiased">
+      <body className="min-h-full bg-sand-50 font-sans text-ink antialiased">
         <a
-          href="#about"
+          href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sand-50"
         >
           Skip to content
@@ -54,11 +52,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </clipPath>
           </defs>
         </svg>
-        <Providers>
-          <Nav />
-          {children}
-        </Providers>
-        <div aria-hidden className="grain" style={{ backgroundImage: noise() }} />
+        <Nav />
+        {children}
       </body>
     </html>
   );

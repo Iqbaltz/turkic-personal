@@ -1,5 +1,3 @@
-import type { Tone } from "@/lib/palette";
-
 export const profile = {
   name: "Muhammad Iqbal",
   firstName: "Iqbal",
@@ -28,66 +26,41 @@ export const values = [
   {
     title: "Open collaboration",
     body: "I prioritize client collaboration and keep communication open from the first sketch to launch day.",
-    icon: "tulip",
-    tone: "rose",
   },
   {
     title: "Flexible across time zones",
     body: "Based in Jakarta (UTC+7) and very flexible with time zone communication.",
-    icon: "compass",
-    tone: "turq",
   },
   {
     title: "Always improving",
     body: "I constantly try to improve, picking up new tools and better habits one day at a time.",
-    icon: "steps",
-    tone: "sage",
   },
-] as const satisfies ReadonlyArray<{
-  title: string;
-  body: string;
-  icon: "tulip" | "compass" | "steps";
-  tone: Tone;
-}>;
+];
 
 export type StackGroup = {
   label: string;
-  tone: Tone;
-  pattern: PatternKind;
   items: string[];
 };
-
-export type PatternKind = "star" | "lattice" | "cintemani" | "tulip";
 
 export const stack: StackGroup[] = [
   {
     label: "Front end",
-    tone: "turq",
-    pattern: "star",
     items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML, CSS & JS"],
   },
   {
     label: "Back end",
-    tone: "cobalt",
-    pattern: "lattice",
     items: ["Node.js & Express", ".NET & C#", "Laravel", "REST APIs"],
   },
   {
     label: "Data",
-    tone: "sage",
-    pattern: "cintemani",
     items: ["PostgreSQL", "SQL Server", "MySQL", "MongoDB"],
   },
   {
     label: "Content",
-    tone: "rose",
-    pattern: "tulip",
     items: ["Payload CMS", "Sanity"],
   },
   {
     label: "Cloud & tools",
-    tone: "khaki",
-    pattern: "star",
     items: ["Docker", "Cloudinary", "Appwrite", "Stream", "Hostinger"],
   },
 ];
@@ -171,9 +144,6 @@ export type Project = {
   tech: string[];
   url: string;
   host: string;
-  tone: Tone;
-  pattern: PatternKind;
-  mark: string;
 };
 
 export const projects: Project[] = [
@@ -186,9 +156,6 @@ export const projects: Project[] = [
     tech: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Payload", "PostgreSQL"],
     url: "https://www.foundasi.com/en",
     host: "foundasi.com",
-    tone: "turq",
-    pattern: "star",
-    mark: "Fd",
   },
   {
     no: "02",
@@ -199,9 +166,6 @@ export const projects: Project[] = [
     tech: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Laravel", "MySQL"],
     url: "https://founda-pos.vercel.app/",
     host: "founda-pos.vercel.app",
-    tone: "cobalt",
-    pattern: "lattice",
-    mark: "Po",
   },
   {
     no: "03",
@@ -212,9 +176,6 @@ export const projects: Project[] = [
     tech: ["React", "Tailwind CSS", "TypeScript", "Sanity"],
     url: "https://kja-azhar-maksum.vercel.app/en",
     host: "kja-azhar-maksum.vercel.app",
-    tone: "sage",
-    pattern: "cintemani",
-    mark: "AM",
   },
   {
     no: "04",
@@ -225,9 +186,6 @@ export const projects: Project[] = [
     tech: ["Next.js", "Tailwind CSS", "TypeScript"],
     url: "https://sbs-cosmetics.com/en",
     host: "sbs-cosmetics.com",
-    tone: "rose",
-    pattern: "tulip",
-    mark: "SBS",
   },
 ];
 
@@ -236,31 +194,15 @@ export const books = [
     title: "Thinking, Fast and Slow",
     author: "Daniel Kahneman",
     note: "Two systems of thought, and the biases that live between them.",
-    tone: "cobalt",
-    height: 44,
-    width: 14,
   },
   {
     title: "The 48 Laws of Power",
     author: "Robert Greene",
     note: "Strategy, influence and the long history of power.",
-    tone: "rose",
-    height: 40,
-    width: 16,
   },
   {
     title: "The Ottomans: A Cultural Legacy",
     author: "Diana Darke",
     note: "The art, architecture and ideas the Ottoman world left behind.",
-    tone: "turq",
-    height: 47,
-    width: 13,
   },
-] as const satisfies ReadonlyArray<{
-  title: string;
-  author: string;
-  note: string;
-  tone: Tone;
-  height: number;
-  width: number;
-}>;
+];

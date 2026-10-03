@@ -1,40 +1,18 @@
 @import "tailwindcss";
-@import "lenis/dist/lenis.css";
 
 @theme {
   --color-sand-50: #fbf7ef;
   --color-sand-100: #f5ede0;
-  --color-sand-200: #ece0cc;
-  --color-sand-300: #dfcfb2;
   --color-khaki-400: #c9b690;
   --color-khaki-500: #ad9a72;
   --color-khaki-600: #8c7b57;
   --color-ink: #3a322a;
   --color-ink-soft: #6b5f52;
 
-  --color-turq-100: #e2f1ee;
   --color-turq-200: #c6e3de;
   --color-turq-300: #9acfc7;
   --color-turq-500: #5e9e97;
   --color-turq-700: #3b6b66;
-
-  --color-cobalt-100: #e6ebf5;
-  --color-cobalt-200: #ccd6ea;
-  --color-cobalt-300: #a9b9da;
-  --color-cobalt-500: #6f86b5;
-  --color-cobalt-700: #45598a;
-
-  --color-rose-100: #f8e8e5;
-  --color-rose-200: #f2d3ce;
-  --color-rose-300: #e8b2aa;
-  --color-rose-500: #c98379;
-  --color-rose-700: #9a5a52;
-
-  --color-sage-100: #ebf0e4;
-  --color-sage-200: #d8e2cf;
-  --color-sage-300: #b8cca9;
-  --color-sage-500: #86a07a;
-  --color-sage-700: #56704b;
 }
 
 @theme inline {
@@ -47,11 +25,17 @@
 }
 
 html {
-  background: var(--color-sand-100);
+  background: var(--color-sand-50);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-  background: var(--color-sand-100);
+  background: var(--color-sand-50);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -72,128 +56,14 @@ section[id] {
   scroll-margin-top: 72px;
 }
 
-/* Paper grain over everything, like an old tile catalogue. */
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.06;
-  mix-blend-mode: multiply;
-}
-
-/* Hero copy width: whatever wall is left between the viewport edge and the portal. */
-.hero-copy {
-  --u: max(100vw / 1600, 100svh / 1000);
-  --copy-w: min(30rem, calc(50vw - 240 * var(--u) - clamp(2.5rem, 4.5vw, 5rem) - 1.5rem));
-}
-
 .clip-arch {
   clip-path: url(#arch-clip);
-}
-
-.kandil {
-  transform-box: view-box;
-  transform-origin: 800px 560px;
-  animation: swing 7s ease-in-out infinite;
-}
-
-.bird {
-  transform-box: fill-box;
-  animation: glide 16s ease-in-out infinite;
-}
-.bird:nth-of-type(2) {
-  animation-delay: -5s;
-}
-.bird:nth-of-type(3) {
-  animation-delay: -9s;
-}
-
-.steam path {
-  animation: steam 3.8s ease-in-out infinite;
-}
-.steam path:nth-child(2) {
-  animation-delay: -1.3s;
-}
-.steam path:nth-child(3) {
-  animation-delay: -2.5s;
-}
-
-.spin-slow {
-  animation: spin 120s linear infinite;
-}
-
-.bob {
-  animation: bob 2.4s ease-in-out infinite;
-}
-
-.pulse-dot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: inherit;
-  animation: ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes swing {
-  0%,
-  100% {
-    transform: rotate(-2.4deg);
-  }
-  50% {
-    transform: rotate(2.4deg);
-  }
-}
-
-@keyframes glide {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(28px, -12px);
-  }
-}
-
-@keyframes steam {
-  0% {
-    transform: translateY(8px);
-    opacity: 0;
-  }
-  35% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(-16px);
-    opacity: 0;
-  }
-}
-
-@keyframes bob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5px);
-  }
-}
-
-@keyframes ping {
-  75%,
-  100% {
-    transform: scale(2.4);
-    opacity: 0;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
 }
