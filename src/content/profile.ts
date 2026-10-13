@@ -12,12 +12,12 @@ export const profile = {
   },
   cv: "/cv/Muhammad-Iqbal-CV.pdf",
   now: {
-    text: "Leading development of a Budget Plan app used across the company",
-    place: "PT Tower Bersama Infrastructure",
+    text: "Developing the revenue and billing system",
+    place: "PT Tower Bersama Group",
   },
   education: {
     school: "Politeknik Negeri Medan",
-    degree: "Computer Engineering",
+    degree: "Diploma in Computer Engineering",
     years: "2018 to 2021",
   },
 };
@@ -45,15 +45,15 @@ export type StackGroup = {
 export const stack: StackGroup[] = [
   {
     label: "Front end",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML, CSS & JS"],
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML & CSS/SCSS"],
   },
   {
     label: "Back end",
-    items: ["Node.js & Express", ".NET & C#", "Laravel", "REST APIs"],
+    items: ["Node.js & Express", ".NET Core & C#", "Laravel", "REST APIs", "API & Web3 integration"],
   },
   {
     label: "Data",
-    items: ["PostgreSQL", "SQL Server", "MySQL", "MongoDB"],
+    items: ["SQL Server", "PostgreSQL", "MySQL", "MongoDB"],
   },
   {
     label: "Content",
@@ -78,61 +78,54 @@ export type Job = {
 export const experience: Job[] = [
   {
     period: "Mar 2026 → Now",
-    role: "Software Engineer",
-    company: "PT Tower Bersama Infrastructure",
+    role: "Fullstack Developer",
+    company: "PT Tower Bersama Group",
     current: true,
     summary:
-      "Building internal web applications, and currently leading development of a Budget Plan app used across the company.",
-    points: [],
-    tags: [],
+      "Developing and maintaining a Revenue (Accounts Receivable) system that handles billing logic and automated billing period generation for the company’s tower-leasing operations.",
+    points: [
+      "Designed and implemented billing period generation for both bulk and single-record processing, using SQL Server stored procedures and table-valued parameters.",
+      "Built end-to-end features across the stack, with backend services, data models and database views in .NET, C# and SQL Server.",
+    ],
+    tags: [".NET", "C#", "SQL Server"],
   },
   {
-    period: "Nov 2023 → Mar 2026",
+    period: "Nov 2023 → Dec 2025",
     role: "Fullstack Developer",
     company: "PT Lion Superindo",
-    summary:
-      "Built and maintained scalable internal enterprise applications with Next.js, .NET and SQL Server.",
+    summary: "Built and maintained scalable web applications using Next.js, .NET and SQL Server.",
     points: [
-      "Developed internal systems including a Store Expansion ERP, HR Performance Management and Self-Service Cashier.",
-      "Implemented dashboards, email notifications, role-based access control and multi-stage workflows.",
-      "Optimized the React codebase with custom hooks and reusable HTTP service layers.",
+      "Developed internal enterprise applications, including a Store Expansion ERP, an HR Performance Management system and Self-Service Cashier systems.",
+      "Implemented interactive dashboards, automated email notifications, role-based access control and multi-stage approval workflows.",
+      "Optimized the React codebase with custom hooks and reusable HTTP service layers to improve maintainability and consistency.",
       "Delivered reporting features with Excel and PDF export.",
     ],
     tags: ["Next.js", ".NET", "SQL Server", "React"],
   },
   {
     period: "Apr 2022 → Jul 2023",
-    role: "Front End Developer",
+    role: "Frontend Developer",
     company: "STRT Button",
     summary:
       "Developed and maintained responsive, user-friendly web applications for clients at a Web3 company.",
     points: [
-      "Worked closely with the design, front-end and back-end teams to ship polished interfaces.",
-      "Built with React, Next.js, TypeScript and Tailwind CSS, following industry coding standards.",
-      "Maintained Git-based version control for smooth collaboration across the team.",
+      "Collaborated closely with the design, frontend and backend teams to ship cohesive, polished products.",
+      "Built interfaces with React, Next.js, TypeScript and Tailwind CSS, following industry best practices and coding standards.",
+      "Managed version control with Git for smooth collaboration across the development team.",
     ],
     tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Web3"],
   },
   {
     period: "Mar 2021 → Feb 2022",
-    role: "Front End Developer",
-    company: "Mejakreatif",
-    summary: "Developed and maintained client websites alongside the design team.",
+    role: "Web Developer",
+    company: "Mejakreatif (Fiverr)",
+    summary: "Developed and maintained client websites using React, Express.js (Node.js) and MongoDB.",
     points: [
-      "Collaborated with designers to turn concepts into effective websites.",
-      "Created reusable components to speed up future projects.",
-      "Made every site fully responsive and mobile-friendly.",
+      "Partnered with the design team to turn concepts into effective, on-brand websites.",
+      "Created reusable components to speed up delivery on future projects.",
+      "Made every website fully responsive and mobile-friendly for a seamless user experience.",
     ],
     tags: ["React", "Express.js", "MongoDB"],
-  },
-  {
-    period: "Mar 2021 → Feb 2022",
-    role: "Freelance Web Developer",
-    company: "Fiverr",
-    summary:
-      "Led the development of a web app for a client, from initial concept to deployment.",
-    points: [],
-    tags: [],
   },
 ];
 

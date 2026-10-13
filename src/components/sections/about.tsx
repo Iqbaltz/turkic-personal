@@ -3,7 +3,7 @@ import { profile, values } from "@/content/profile";
 
 const facts = [
   { figure: "2021", label: "Shipping production web apps since" },
-  { figure: "5", label: "Stops so far: agency, freelance, Web3, retail and infrastructure" },
+  { figure: "4", label: "Stops so far: agency and freelance, Web3, retail and infrastructure" },
   { figure: profile.timezone, label: "Jakarta time, and flexible across time zones" },
 ];
 
@@ -37,7 +37,7 @@ export function About() {
                 Right now
               </dt>
               <dd className="mt-2 font-display text-[1.6rem] leading-snug text-ink">
-                Leading a company-wide Budget Plan app at {profile.now.place}.
+                {profile.now.text} at {profile.now.place}.
               </dd>
             </div>
             <div className="py-6">

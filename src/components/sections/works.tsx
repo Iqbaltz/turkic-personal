@@ -64,7 +64,8 @@ export function Works() {
         <aside className="mt-10 grid gap-3 border-l border-khaki-400/60 pl-6 md:max-w-3xl">
           <p className="font-display text-2xl text-ink">Much of my work lives inside companies, too.</p>
           <p className="leading-relaxed text-ink-soft">
-            A store expansion ERP, HR performance management, a self-service cashier and a company-wide budget planner.
+            A store expansion ERP, HR performance management, a self-service cashier and a revenue and billing system
+            for tower leasing.
             Happy to walk you through them.{" "}
             <a
               href="#contact"

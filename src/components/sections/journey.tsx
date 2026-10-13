@@ -9,11 +9,11 @@ export function Journey() {
           <div className="lg:sticky lg:top-28">
             <SectionLabel tr="Yolculuk" en="The journey" />
             <h2 className="mt-6 font-display text-[clamp(2.2rem,4.4vw,3.4rem)] font-medium leading-[1.05] text-ink">
-              Five stops on the road <em className="text-turq-700">so far.</em>
+              Four stops on the road <em className="text-turq-700">so far.</em>
             </h2>
             <p className="mt-6 max-w-sm text-[1.05rem] leading-relaxed text-ink-soft">
-              Like a caravan crossing from inn to inn, each role added something to the saddlebags: agency craft,
-              freelance ownership, Web3 products, enterprise systems and now infrastructure.
+              Like a caravan crossing from inn to inn, each role added something to the saddlebags: agency and
+              freelance craft, Web3 products, enterprise systems and now billing for tower infrastructure.
             </p>
           </div>
         </div>
