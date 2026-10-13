@@ -1,7 +1,8 @@
-import { PortalHero } from "@/components/hero/portal-hero";
+import { Divider } from "@/components/ornaments";
 import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/sections/footer";
+import { Hero } from "@/components/sections/hero";
 import { Journey } from "@/components/sections/journey";
 import { Library } from "@/components/sections/library";
 import { Stack } from "@/components/sections/stack";
@@ -23,12 +24,17 @@ const person = {
 export default function Home() {
   return (
     <>
-      <main>
-        <PortalHero />
+      <main id="main">
+        <Hero />
+        <Divider />
         <About />
+        <Divider />
         <Stack />
+        <Divider />
         <Journey />
+        <Divider />
         <Works />
+        <Divider />
         <Library />
         <Contact />
       </main>
