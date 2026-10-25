@@ -1,7 +1,7 @@
-import { ArchOutline, ArchWindow, SectionLabel, Star8 } from "@/components/ornaments";
+import Image from "next/image";
+import { ArchOutline, SectionLabel, Star8 } from "@/components/ornaments";
 import { profile } from "@/content/profile";
-import { palette } from "@/lib/palette";
-import { starLattice } from "@/lib/patterns";
+import portrait from "../../../public/images/iqbal.png";
 
 export function Hero() {
   return (
@@ -13,10 +13,12 @@ export function Hero() {
             Muhammad <em className="font-normal text-turq-700">Iqbal</em>
           </h1>
           <p className="mt-6 max-w-xl text-[1.07rem] leading-relaxed text-ink-soft">
-            A {profile.role.toLowerCase()} in {profile.location}, building dependable web apps with React, Next.js,
-            TypeScript and .NET.
+            A {profile.role.toLowerCase()} in {profile.location}, building
+            dependable web apps with React, Next.js, TypeScript and .NET.
           </p>
-          <p className="mt-4 font-display text-xl italic text-turq-700">“{profile.tagline}”</p>
+          <p className="mt-4 font-display text-xl italic text-turq-700">
+            “{profile.tagline}”
+          </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
             <a
@@ -30,7 +32,8 @@ export function Hero() {
               download
               className="text-sm font-semibold text-ink underline decoration-khaki-400 decoration-1 underline-offset-[6px] transition-colors hover:text-turq-700 hover:decoration-turq-500"
             >
-              Download CV <span className="font-normal text-ink-soft">(PDF)</span>
+              Download CV{" "}
+              <span className="font-normal text-ink-soft">(PDF)</span>
             </a>
           </div>
         </div>
@@ -38,14 +41,30 @@ export function Hero() {
         <div className="lg:col-span-5">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[17rem] text-khaki-400 sm:max-w-[20rem] lg:max-w-[22rem]">
             <ArchOutline />
-            <ArchWindow pattern={starLattice(palette.turq300, 44)} className="absolute inset-x-[5%] bottom-0 top-[5%] text-khaki-500">
-              <div className="absolute inset-x-0 bottom-[16%] flex justify-center">
-                <div className="grid aspect-square w-[36%] place-items-center rounded-full border border-khaki-400 bg-sand-50">
-                  <Star8 className="h-[46%] w-[46%] text-turq-700" />
-                </div>
+            <div className="absolute inset-x-[5%] bottom-0 top-[5%] text-khaki-500">
+              <div className="clip-arch absolute inset-0 bg-sand-50">
+                <Image
+                  src={portrait}
+                  alt="Portrait of Muhammad Iqbal"
+                  fill
+                  preload
+                  sizes="(min-width: 1024px) 20rem, (min-width: 640px) 18rem, 15rem"
+                  className="origin-[50%_35%] scale-[1.4] object-cover"
+                />
               </div>
-            </ArchWindow>
-            <span aria-hidden className="absolute -inset-x-[8%] bottom-0 h-px bg-khaki-400" />
+              <ArchOutline />
+            </div>
+            <blockquote className="absolute bottom-[9%] -left-[6%] right-[18%] rounded-2xl border border-khaki-400 bg-sand-50/90 px-5 py-4 shadow-[0_8px_24px_-12px_rgba(58,50,42,0.35)] backdrop-blur-sm">
+              <Star8 className="h-3 w-3 text-turq-500" />
+              <p className="mt-2 font-display text-lg italic leading-snug text-ink">
+                “The most beloved deeds to Allah are the most consistent, even
+                if small.” ~ Hadith (Bukhari & Muslim)
+              </p>
+            </blockquote>
+            <span
+              aria-hidden
+              className="absolute -inset-x-[8%] bottom-0 h-px bg-khaki-400"
+            />
           </div>
         </div>
       </div>
