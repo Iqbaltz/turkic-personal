@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { Nav } from "@/components/nav";
+import { RevealObserver } from "@/components/reveal-observer";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -37,7 +38,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} h-full`}>
+    <html lang="en" className={`${display.variable} ${sans.variable} h-full`} suppressHydrationWarning>
+      <head>
+        {/* Lets scroll reveals start hidden before first paint; without JavaScript everything simply shows. */}
+        <script dangerouslySetInnerHTML={{ __html: `document.documentElement.dataset.motion=""` }} />
+      </head>
       <body className="min-h-full bg-sand-50 font-sans text-ink antialiased">
         <a
           href="#main"
@@ -54,6 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </svg>
         <Nav />
         {children}
+        <RevealObserver />
       </body>
     </html>
   );

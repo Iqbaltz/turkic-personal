@@ -187,15 +187,18 @@ export const books = [
     title: "Thinking, Fast and Slow",
     author: "Daniel Kahneman",
     note: "Two systems of thought, and the biases that live between them.",
+    cover: "/books/thinkingfastslow.webp",
   },
   {
     title: "The 48 Laws of Power",
     author: "Robert Greene",
     note: "Strategy, influence and the long history of power.",
+    cover: "/books/48lawpower.jpg",
   },
   {
     title: "The Ottomans: A Cultural Legacy",
     author: "Diana Darke",
     note: "The art, architecture and ideas the Ottoman world left behind.",
+    cover: "/books/ottoman.jpg",
   },
 ];

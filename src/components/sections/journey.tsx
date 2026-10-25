@@ -1,4 +1,5 @@
 import { SectionLabel, Star8 } from "@/components/ornaments";
+import { Words } from "@/components/words";
 import { experience } from "@/content/profile";
 
 export function Journey() {
@@ -7,11 +8,16 @@ export function Journey() {
       <div className="mx-auto grid max-w-6xl gap-12 px-5 md:px-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-28">
-            <SectionLabel tr="Yolculuk" en="The journey" />
-            <h2 className="mt-6 font-display text-[clamp(2.2rem,4.4vw,3.4rem)] font-medium leading-[1.05] text-ink">
-              Four stops on the road <em className="text-turq-700">so far.</em>
+            <SectionLabel tr="Yolculuk" en="The journey" data-reveal="up" />
+            <h2
+              data-reveal="words"
+              className="mt-6 font-display text-[clamp(2.2rem,4.4vw,3.4rem)] font-medium leading-[1.05] text-ink"
+            >
+              <Words>
+                Four stops on the road <em className="text-turq-700">so far.</em>
+              </Words>
             </h2>
-            <p className="mt-6 max-w-sm text-[1.05rem] leading-relaxed text-ink-soft">
+            <p data-reveal="up" className="mt-6 max-w-sm text-[1.05rem] leading-relaxed text-ink-soft">
               Like a caravan crossing from inn to inn, each role added something to the saddlebags: agency and
               freelance craft, Web3 products, enterprise systems and now billing for tower infrastructure.
             </p>
@@ -22,6 +28,7 @@ export function Journey() {
           {experience.map((job) => (
             <li
               key={`${job.company}-${job.role}`}
+              data-reveal="up"
               className="grid gap-3 border-b border-khaki-400/45 py-8 sm:grid-cols-[12rem_1fr] sm:gap-8"
             >
               <div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArchOutline, SectionLabel, Star8 } from "@/components/ornaments";
+import { Words } from "@/components/words";
 import { profile } from "@/content/profile";
 import portrait from "../../../public/images/iqbal.png";
 
@@ -8,19 +9,21 @@ export function Hero() {
     <section id="top" aria-label="Introduction" className="pt-16">
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-20 pt-16 md:px-8 md:pt-24 lg:grid-cols-12 lg:gap-10 lg:pb-28">
         <div className="lg:col-span-7">
-          <SectionLabel tr="Hoş geldiniz" en="Welcome" />
-          <h1 className="mt-6 font-display text-[clamp(3rem,8vw,5.25rem)] font-medium leading-[0.95] tracking-[-0.01em] text-ink">
-            Muhammad <em className="font-normal text-turq-700">Iqbal</em>
+          <SectionLabel tr="Hoş geldiniz" en="Welcome" className="hero-in" />
+          <h1 className="hero-words mt-6 font-display text-[clamp(3rem,8vw,5.25rem)] font-medium leading-[0.95] tracking-[-0.01em] text-ink [--char-duration:85ms] [--d:150ms]">
+            <Words>
+              Muhammad <em className="font-normal text-turq-700">Iqbal</em>
+            </Words>
           </h1>
-          <p className="mt-6 max-w-xl text-[1.07rem] leading-relaxed text-ink-soft">
+          <p className="hero-in mt-6 max-w-xl text-[1.07rem] leading-relaxed text-ink-soft [--d:1450ms]">
             A {profile.role.toLowerCase()} in {profile.location}, building
             dependable web apps with React, Next.js, TypeScript and .NET.
           </p>
-          <p className="mt-4 font-display text-xl italic text-turq-700">
+          <p className="hero-in mt-4 font-display text-xl italic text-turq-700 [--d:1650ms]">
             “{profile.tagline}”
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <div className="hero-in mt-10 flex flex-wrap items-center gap-x-7 gap-y-4 [--d:1850ms]">
             <a
               href="#works"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-sand-50 transition-colors hover:bg-turq-700"
@@ -39,7 +42,7 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-5">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[17rem] text-khaki-400 sm:max-w-[20rem] lg:max-w-[22rem]">
+          <div className="hero-in relative mx-auto aspect-[4/5] w-full max-w-[17rem] text-khaki-400 [--d:250ms] sm:max-w-[20rem] lg:max-w-[22rem]">
             <ArchOutline />
             <div className="absolute inset-x-[5%] bottom-0 top-[5%] text-khaki-500">
               <div className="clip-arch absolute inset-0 bg-sand-50">
@@ -49,12 +52,12 @@ export function Hero() {
                   fill
                   preload
                   sizes="(min-width: 1024px) 20rem, (min-width: 640px) 18rem, 15rem"
-                  className="origin-[50%_35%] scale-[1.4] object-cover"
+                  className="hero-settle origin-[50%_35%] scale-[1.4] object-cover [--d:300ms]"
                 />
               </div>
               <ArchOutline />
             </div>
-            <blockquote className="absolute bottom-[9%] -left-[6%] right-[18%] rounded-2xl border border-khaki-400 bg-sand-50/90 px-5 py-4 shadow-[0_8px_24px_-12px_rgba(58,50,42,0.35)] backdrop-blur-sm">
+            <blockquote className="hero-in [--d:2050ms] absolute bottom-[9%] -left-[6%] right-[18%] rounded-2xl border border-khaki-400 bg-sand-50/90 px-5 py-4 shadow-[0_8px_24px_-12px_rgba(58,50,42,0.35)] backdrop-blur-sm">
               <Star8 className="h-3 w-3 text-turq-500" />
               <p className="mt-2 font-display text-lg italic leading-snug text-ink">
                 “The most beloved deeds to Allah are the most consistent, even
@@ -63,7 +66,7 @@ export function Hero() {
             </blockquote>
             <span
               aria-hidden
-              className="absolute -inset-x-[8%] bottom-0 h-px bg-khaki-400"
+              className="hero-line absolute -inset-x-[8%] bottom-0 h-px bg-khaki-400 [--d:500ms]"
             />
           </div>
         </div>

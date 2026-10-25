@@ -1,4 +1,5 @@
 import { ArchWindow, SectionLabel } from "@/components/ornaments";
+import { Words } from "@/components/words";
 import { projects, type Project } from "@/content/profile";
 import { palette } from "@/lib/palette";
 import { starLattice } from "@/lib/patterns";
@@ -7,7 +8,7 @@ const lattice = starLattice(palette.turq300, 22);
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="flex flex-col rounded-2xl border border-khaki-400/55 bg-sand-50 p-6 md:p-7">
+    <article data-reveal="up" className="flex flex-col rounded-2xl border border-khaki-400/55 bg-sand-50 p-6 md:p-7">
       <div className="flex items-center gap-5">
         <ArchWindow pattern={lattice} className="relative h-[4.5rem] w-14 shrink-0 text-khaki-500" />
         <div>
@@ -44,12 +45,17 @@ export function Works() {
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <SectionLabel tr="Çarşı" en="The bazaar" />
-            <h2 className="mt-6 font-display text-[clamp(2.2rem,4.4vw,3.4rem)] font-medium leading-[1.05] text-ink">
-              Selected <em className="text-turq-700">works.</em>
+            <SectionLabel tr="Çarşı" en="The bazaar" data-reveal="up" />
+            <h2
+              data-reveal="words"
+              className="mt-6 font-display text-[clamp(2.2rem,4.4vw,3.4rem)] font-medium leading-[1.05] text-ink"
+            >
+              <Words>
+                Selected <em className="text-turq-700">works.</em>
+              </Words>
             </h2>
           </div>
-          <p className="max-w-md text-[1.05rem] leading-relaxed text-ink-soft lg:col-span-5 lg:justify-self-end">
+          <p data-reveal="up" className="max-w-md text-[1.05rem] leading-relaxed text-ink-soft lg:col-span-5 lg:justify-self-end">
             Sites and apps I’ve built for clients, from an agency’s home to a cashier’s everyday tool. All of them are
             live.
           </p>
@@ -61,7 +67,7 @@ export function Works() {
           ))}
         </div>
 
-        <aside className="mt-10 grid gap-3 border-l border-khaki-400/60 pl-6 md:max-w-3xl">
+        <aside data-reveal="up" className="mt-10 grid gap-3 border-l border-khaki-400/60 pl-6 md:max-w-3xl">
           <p className="font-display text-2xl text-ink">Much of my work lives inside companies, too.</p>
           <p className="leading-relaxed text-ink-soft">
             A store expansion ERP, HR performance management, a self-service cashier and a revenue and billing system

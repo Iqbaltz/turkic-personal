@@ -1,5 +1,6 @@
 import { SectionLabel, Star8 } from "@/components/ornaments";
 import { CopyEmail } from "@/components/sections/copy-email";
+import { Words } from "@/components/words";
 import { profile } from "@/content/profile";
 
 export function Contact() {
@@ -7,7 +8,7 @@ export function Contact() {
     <section id="contact" className="px-5 pb-24 pt-10 md:px-8 md:pb-28">
       <div className="mx-auto max-w-4xl">
         {/* Ogee arch cap over the panel */}
-        <div className="relative">
+        <div data-reveal="arch" className="relative">
           <svg viewBox="0 0 1000 150" className="block h-auto w-full" aria-hidden focusable="false">
             <path
               d="M0 150V120C170 120 318 92 410 50C448 34 480 18 500 2C520 18 552 34 590 50C682 92 830 120 1000 120V150Z"
@@ -27,17 +28,24 @@ export function Contact() {
         </div>
 
         <div className="-mt-px rounded-b-2xl border-x border-b border-khaki-400 bg-sand-100 px-6 pb-12 pt-2 text-center md:px-14 md:pb-16">
-          <SectionLabel tr="Çayhane" en="The tea house" className="justify-center" />
-          <h2 className="mx-auto mt-6 max-w-2xl font-display text-[clamp(2.2rem,4.4vw,3.4rem)] font-medium leading-[1.05] text-ink">
-            Do you want to start a project <em className="text-turq-700">together?</em>
+          <SectionLabel tr="Çayhane" en="The tea house" className="justify-center" data-reveal="up" />
+          <h2
+            data-reveal="words"
+            className="mx-auto mt-6 max-w-2xl font-display text-[clamp(2.2rem,4.4vw,3.4rem)] font-medium leading-[1.05] text-ink"
+          >
+            <Words>
+              Do you want to start a project <em className="text-turq-700">together?</em>
+            </Words>
           </h2>
-          <p className="mt-3 font-display text-xl italic text-ink-soft">Let’s talk it over a glass of çay.</p>
-          <p className="mx-auto mt-5 max-w-xl leading-relaxed text-ink-soft">
+          <p data-reveal="up" className="mt-3 font-display text-xl italic text-ink-soft">
+            Let’s talk it over a glass of çay.
+          </p>
+          <p data-reveal="up" className="mx-auto mt-5 max-w-xl leading-relaxed text-ink-soft">
             Ready to take your digital presence to the next level? Reach out today and let’s discuss how I can help you
             reach your goals.
           </p>
 
-          <div className="mx-auto mt-10 grid max-w-2xl gap-4 text-left sm:grid-cols-2">
+          <div data-reveal="up" className="mx-auto mt-10 grid max-w-2xl gap-4 text-left sm:grid-cols-2">
             <CopyEmail email={profile.email} />
             <a
               href={profile.whatsapp.href}
