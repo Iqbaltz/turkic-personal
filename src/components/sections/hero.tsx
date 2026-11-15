@@ -42,32 +42,35 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-5">
-          <div className="hero-in relative mx-auto aspect-[4/5] w-full max-w-[17rem] text-khaki-400 [--d:250ms] sm:max-w-[20rem] lg:max-w-[22rem]">
-            <ArchOutline />
-            <div className="absolute inset-x-[5%] bottom-0 top-[5%] text-khaki-500">
-              <div className="clip-arch absolute inset-0 bg-sand-50">
-                <Image
-                  src={portrait}
-                  alt="Portrait of Muhammad Iqbal"
-                  fill
-                  preload
-                  sizes="(min-width: 1024px) 20rem, (min-width: 640px) 18rem, 15rem"
-                  className="hero-settle origin-[50%_35%] scale-[1.4] object-cover [--d:300ms]"
-                />
-              </div>
+          <div className="relative mx-auto w-full max-w-[17rem] sm:max-w-[20rem] lg:max-w-[22rem]">
+            <div className="hero-in relative aspect-[4/5] w-full text-khaki-400 [--d:250ms]">
               <ArchOutline />
+              <div className="absolute inset-x-[5%] bottom-0 top-[5%] text-khaki-500">
+                <div className="clip-arch absolute inset-0 bg-sand-50">
+                  <Image
+                    src={portrait}
+                    alt="Portrait of Muhammad Iqbal"
+                    fill
+                    preload
+                    sizes="(min-width: 1024px) 20rem, (min-width: 640px) 18rem, 15rem"
+                    className="hero-settle origin-[50%_35%] scale-[1.4] object-cover [--d:300ms]"
+                  />
+                </div>
+                <ArchOutline />
+              </div>
+              <span
+                aria-hidden
+                className="hero-line absolute -inset-x-[8%] bottom-0 h-px bg-khaki-400 [--d:500ms]"
+              />
             </div>
-            <blockquote className="hero-in [--d:2050ms] absolute bottom-[9%] -left-[6%] right-[18%] rounded-2xl border border-khaki-400 bg-sand-50/90 px-5 py-4 shadow-[0_8px_24px_-12px_rgba(58,50,42,0.35)] backdrop-blur-sm">
+            {/* On phones the card sits below the portrait (only overlapping the shoulders) so the face stays clear. */}
+            <blockquote className="hero-in [--d:2050ms] relative z-10 -mx-3 -mt-10 rounded-2xl border border-khaki-400 bg-sand-50/90 px-5 py-4 shadow-[0_8px_24px_-12px_rgba(58,50,42,0.35)] backdrop-blur-sm sm:absolute sm:-left-[6%] sm:right-[18%] sm:bottom-[9%] sm:mx-0 sm:mt-0">
               <Star8 className="h-3 w-3 text-turq-500" />
               <p className="mt-2 font-display text-lg italic leading-snug text-ink">
                 “The most beloved deeds to Allah are the most consistent, even
                 if small.” ~ Hadith (Bukhari & Muslim)
               </p>
             </blockquote>
-            <span
-              aria-hidden
-              className="hero-line absolute -inset-x-[8%] bottom-0 h-px bg-khaki-400 [--d:500ms]"
-            />
           </div>
         </div>
       </div>
