@@ -10,6 +10,7 @@ const MAX_WAIT_MS = 4000;
 /**
  * Reveals each [data-reveal] element as it scrolls into view, one after another on a shared timeline:
  * a heading holds the line until its wipe reaches the last letter, then whatever arrived with it follows.
+ * Pages reached by client-side navigation mount later, under the same root layout, so it watches for them too.
  */
 export function RevealObserver() {
   useLayoutEffect(() => {
@@ -40,8 +41,25 @@ export function RevealObserver() {
       { rootMargin: "0px 0px -10% 0px" },
     );
 
-    document.querySelectorAll("[data-reveal]:not([data-revealed])").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    const watch = (root: ParentNode) =>
+      root.querySelectorAll("[data-reveal]:not([data-revealed])").forEach((el) => observer.observe(el));
+    watch(document);
+
+    const arrivals = new MutationObserver((records) => {
+      for (const record of records) {
+        for (const node of record.addedNodes) {
+          if (!(node instanceof Element)) continue;
+          if (node.matches("[data-reveal]:not([data-revealed])")) observer.observe(node);
+          watch(node);
+        }
+      }
+    });
+    arrivals.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      arrivals.disconnect();
+      observer.disconnect();
+    };
   }, []);
 
   return null;

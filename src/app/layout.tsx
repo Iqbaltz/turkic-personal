@@ -38,7 +38,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} h-full`} suppressHydrationWarning>
+    // data-scroll-behavior lets Next.js jump straight to the target when changing pages, so arriving at /#works
+    // from a project page doesn't smooth-scroll past every section; links within a page still glide.
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${display.variable} ${sans.variable} h-full`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Lets scroll reveals start hidden before first paint; without JavaScript everything simply shows. */}
         <script dangerouslySetInnerHTML={{ __html: `document.documentElement.dataset.motion=""` }} />

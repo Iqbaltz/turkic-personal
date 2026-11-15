@@ -60,6 +60,19 @@ section[id] {
   scroll-margin-top: 72px;
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Hold the page still behind an open lightbox. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 .clip-arch {
   clip-path: url(#arch-clip);
 }

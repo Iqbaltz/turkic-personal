@@ -1,40 +1,66 @@
-import { ArchWindow, SectionLabel } from "@/components/ornaments";
+import Link from "next/link";
+import { SectionLabel } from "@/components/ornaments";
+import { ProjectCarousel } from "@/components/project-carousel";
 import { Words } from "@/components/words";
 import { projects, type Project } from "@/content/profile";
-import { palette } from "@/lib/palette";
-import { starLattice } from "@/lib/patterns";
 
-const lattice = starLattice(palette.turq300, 22);
+export function StatusBadge({ status }: { status: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-turq-300 bg-turq-200/45 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-turq-700">
+      <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-turq-500" />
+      {status}
+    </span>
+  );
+}
 
 function ProjectCard({ project }: { project: Project }) {
+  const href = `/works/${project.slug}`;
+
   return (
-    <article data-reveal="up" className="flex flex-col rounded-2xl border border-khaki-400/55 bg-sand-50 p-6 md:p-7">
-      <div className="flex items-center gap-5">
-        <ArchWindow pattern={lattice} className="relative h-[4.5rem] w-14 shrink-0 text-khaki-500" />
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-khaki-600">
-            No. {project.no} <span aria-hidden>·</span> {project.kind}
-          </p>
-          <h3 className="mt-1.5 font-display text-[1.9rem] font-semibold leading-none text-ink">{project.name}</h3>
+    <article
+      data-reveal="up"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-khaki-400/55 bg-sand-50 transition-shadow hover:shadow-[0_28px_50px_-36px_rgba(58,50,42,0.6)]"
+    >
+      <ProjectCarousel
+        name={project.name}
+        href={href}
+        images={project.images}
+        sizes="(min-width: 1152px) 34rem, (min-width: 768px) 50vw, 100vw"
+        className="border-b border-khaki-400/45"
+      />
+
+      {/* The title's link stretches over this block, so the whole text area opens the project. */}
+      <div className="relative flex flex-1 flex-col p-6 md:p-7">
+        <p className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-khaki-600">
+          {project.kind}
+          {project.status && <StatusBadge status={project.status} />}
+        </p>
+        <h3 className="mt-2 font-display text-[1.9rem] font-semibold leading-none text-ink">
+          <Link href={href} className="transition-colors after:absolute after:inset-0 group-hover:text-turq-700">
+            {project.name}
+          </Link>
+        </h3>
+        <p className="mb-6 mt-3 leading-relaxed text-ink-soft">{project.summary}</p>
+
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-khaki-400/45 pt-4 text-sm">
+          <span aria-hidden className="font-semibold text-ink transition-colors group-hover:text-turq-700">
+            View project <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+          </span>
+          {project.url ? (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 text-ink-soft transition-colors hover:text-turq-700"
+            >
+              Visit site <span aria-hidden>↗</span>
+              <span className="sr-only"> {project.host} (opens in a new tab)</span>
+            </a>
+          ) : (
+            <span className="text-ink-soft">Internal system</span>
+          )}
         </div>
       </div>
-      <p className="mt-5 leading-relaxed text-ink-soft">{project.description}</p>
-      <p className="mb-6 mt-4 text-sm text-khaki-600">
-        <span className="sr-only">Built with: </span>
-        {project.tech.join(" · ")}
-      </p>
-      <a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-auto flex items-center justify-between gap-3 border-t border-khaki-400/45 pt-4 text-sm font-semibold text-ink transition-colors hover:text-turq-700"
-      >
-        <span>
-          Visit site <span className="font-normal text-ink-soft">· {project.host}</span>
-          <span className="sr-only"> (opens in a new tab)</span>
-        </span>
-        <span aria-hidden>↗</span>
-      </a>
     </article>
   );
 }
@@ -56,14 +82,14 @@ export function Works() {
             </h2>
           </div>
           <p data-reveal="up" className="max-w-md text-[1.05rem] leading-relaxed text-ink-soft lg:col-span-5 lg:justify-self-end">
-            Sites and apps I’ve built for clients, from an agency’s home to a cashier’s everyday tool. All of them are
-            live.
+            Sites and apps I’ve built, from a supplement storefront and a medical journal to an AI dictation app and
+            the ERP behind a contractor’s projects.
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
-            <ProjectCard key={project.no} project={project} />
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
 
