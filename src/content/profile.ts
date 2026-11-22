@@ -45,11 +45,24 @@ export type StackGroup = {
 export const stack: StackGroup[] = [
   {
     label: "Front end",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML & CSS/SCSS"],
+    items: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML & CSS/SCSS",
+    ],
   },
   {
     label: "Back end",
-    items: ["Node.js & Express", ".NET Core & C#", "Laravel", "REST APIs", "API & Web3 integration"],
+    items: [
+      "Node.js & Express",
+      ".NET Core & C#",
+      "Laravel",
+      "REST APIs",
+      "API & Web3 integration",
+    ],
   },
   {
     label: "Data",
@@ -93,7 +106,8 @@ export const experience: Job[] = [
     period: "Nov 2023 → Dec 2025",
     role: "Fullstack Developer",
     company: "PT Lion Superindo",
-    summary: "Built and maintained scalable web applications using Next.js, .NET and SQL Server.",
+    summary:
+      "Built and maintained scalable web applications using Next.js, .NET and SQL Server.",
     points: [
       "Developed internal enterprise applications, including a Store Expansion ERP, an HR Performance Management system and Self-Service Cashier systems.",
       "Implemented interactive dashboards, automated email notifications, role-based access control and multi-stage approval workflows.",
@@ -119,7 +133,8 @@ export const experience: Job[] = [
     period: "Mar 2021 → Feb 2022",
     role: "Web Developer",
     company: "Mejakreatif (Fiverr)",
-    summary: "Developed and maintained client websites using React, Express.js (Node.js) and MongoDB.",
+    summary:
+      "Developed and maintained client websites using React, Express.js (Node.js) and MongoDB.",
     points: [
       "Partnered with the design team to turn concepts into effective, on-brand websites.",
       "Created reusable components to speed up delivery on future projects.",
@@ -157,7 +172,8 @@ export type Project = {
   images: ProjectImage[];
 };
 
-const shots = (folder: string) => (file: string) => `/images/portfolios/${folder}/${file}`;
+const shots = (folder: string) => (file: string) =>
+  `/images/portfolios/${folder}/${file}`;
 const happyslim = shots("happyslim");
 const jonson = shots("jonson");
 const kombur = shots("komburai");
@@ -169,7 +185,8 @@ export const projects: Project[] = [
     name: "HappySlim",
     kind: "Simple e-commerce",
     status: "In progress",
-    summary: "A storefront for an Indonesian herbal-supplement brand, with orders sent straight to WhatsApp.",
+    summary:
+      "A storefront for an Indonesian herbal-supplement brand, with orders sent straight to WhatsApp.",
     about: [
       "HappySlim.id sells herbal diet supplements and a facial serum through WhatsApp, Shopee and Tokopedia. This site gives the brand a home of its own: it tells the brand’s story, shows the full range and turns a visitor into an order, without a checkout to run.",
       "Instead of a cart and a payment gateway, each product page has a variant and quantity picker that writes the order message for the shopper and opens it in WhatsApp, the same chat where the shop already answers questions and offers free diet consultations. The pages follow the brand’s Figma design.",
@@ -186,11 +203,6 @@ export const projects: Project[] = [
     host: "happyslim-lp.vercel.app",
     images: [
       {
-        src: happyslim("home.png"),
-        alt: "HappySlim home page, headed “Pilihan yang Terinspirasi dari Alam, untuk Perjalanan Hidup yang Lebih Sehat”",
-        caption: "Home page",
-      },
-      {
         src: happyslim("product.png"),
         alt: "HappySlimax product page with photos, price range, variant picker and an order-on-WhatsApp button",
         caption: "Product page with the WhatsApp order flow",
@@ -205,6 +217,11 @@ export const projects: Project[] = [
         alt: "The HappySlim Figma file with the home, about, testimonials and catalogue pages side by side",
         caption: "The Figma design the site is built from",
       },
+      {
+        src: happyslim("home.png"),
+        alt: "HappySlim home page, headed “Pilihan yang Terinspirasi dari Alam, untuk Perjalanan Hidup yang Lebih Sehat”",
+        caption: "Home page",
+      },
     ],
   },
   {
@@ -212,7 +229,8 @@ export const projects: Project[] = [
     name: "JONSON",
     fullName: "Journal of North Sumatera Ophthalmology Nexus",
     kind: "Medical journal",
-    summary: "A branded website for a peer-reviewed, open-access ophthalmology journal, built on top of OJS.",
+    summary:
+      "A branded website for a peer-reviewed, open-access ophthalmology journal, built on top of OJS.",
     about: [
       "JONSON publishes original research, reviews, case reports and clinical studies in eye care, in English and Indonesian. Like most academic journals it runs on Open Journal Systems (OJS), which handles submissions and peer review well, but whose public pages look much like any other OJS journal.",
       "So the public site is a separate Next.js front end in the journal’s own design. On the server it reads issues, articles and journal settings from the OJS REST API and streams published PDFs through its own URLs, while OJS stays the editorial back office for submissions and review.",
@@ -226,7 +244,13 @@ export const projects: Project[] = [
       "Submission guide, policies, publication ethics and editorial board pages",
       "Designed in Figma for desktop, tablet and mobile, and reviewed with the team",
     ],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Open Journal Systems", "PHP"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Open Journal Systems",
+      "PHP",
+    ],
     url: "https://northsumateraophthalmology.com/",
     host: "northsumateraophthalmology.com",
     images: [
@@ -264,7 +288,8 @@ export const projects: Project[] = [
     slug: "kombur-ai",
     name: "Kombur AI",
     kind: "AI dictation app",
-    summary: "Voice dictation for Windows: speak in Indonesian or English, and tidy text appears wherever you type.",
+    summary:
+      "Voice dictation for Windows: speak in Indonesian or English, and tidy text appears wherever you type.",
     about: [
       "Kombur turns speech into clean text on Windows. Put the cursor in any text field, press Ctrl+Shift+D and talk, in Indonesian, English or a mix of both. Kombur drops the filler words, fixes the punctuation and pastes the result in place, whether that’s Gmail, Slack, WhatsApp or Notion.",
       "Behind it sits a small monorepo: a Tauri desktop app that records and pastes, a Hono API on Cloudflare Workers that checks the session and the weekly word quota before running Whisper on Workers AI, Supabase for accounts and synced history, and a Next.js site served from Cloudflare.",
@@ -278,7 +303,15 @@ export const projects: Project[] = [
       "Guided onboarding that tests the microphone and lets you practise the shortcut",
       "A free tier of 2,500 words a week, metered on the server",
     ],
-    tech: ["Tauri", "React", "TypeScript", "Hono", "Cloudflare Workers AI", "Supabase", "Next.js"],
+    tech: [
+      "Tauri",
+      "React",
+      "TypeScript",
+      "Hono",
+      "Cloudflare Workers AI",
+      "Supabase",
+      "Next.js",
+    ],
     url: "https://komburai.com/",
     host: "komburai.com",
     images: [
@@ -304,7 +337,8 @@ export const projects: Project[] = [
     name: "TKM Project",
     fullName: "Project management ERP for PT Technology Karya Mandiri",
     kind: "Project management ERP",
-    summary: "An internal ERP that runs a network contractor’s projects, from cost budget to field progress.",
+    summary:
+      "An internal ERP that runs a network contractor’s projects, from cost budget to field progress.",
     about: [
       "PT Technology Karya Mandiri builds fibre-to-the-home networks, outside-plant fibre and EV-charging stations. TKM Project is the system its teams use to run that work: hundreds of projects across many locations, each with its own budget, work orders, subcontractors and foremen.",
       "A project moves from its bill of quantities (BoQ) and cost budget (RAB) to work orders (SPK), purchase requests and orders, and weekly field progress measured in homepasses. Each document has its own approval chain, run by a shared approval service, and every action is written to an audit log.",
@@ -318,7 +352,13 @@ export const projects: Project[] = [
       "Weekly progress cut-offs for billing, with S-curves and Gantt charts",
       "Excel and PDF exports, and an audit log of every action",
     ],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js & Express", "MariaDB"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js & Express",
+      "MariaDB",
+    ],
     images: [
       {
         src: tkm("dashboard.png"),
